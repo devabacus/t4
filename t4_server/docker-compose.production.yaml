@@ -72,19 +72,19 @@ services:
       ]
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.api.rule=Host(api4.my-points.ru)"
+      - "traefik.http.routers.api.rule=Host(`api4.my-points.ru`)"
       - "traefik.http.routers.api.entrypoints=websecure"
       - "traefik.http.routers.api.service=api-service"
       - "traefik.http.routers.api.tls.certresolver=myresolver"
       - "traefik.http.services.api-service.loadbalancer.server.port=8080"
 
-      - "traefik.http.routers.insights.rule=Host(insights4.my-points.ru)"
+      - "traefik.http.routers.insights.rule=Host(`insights4.my-points.ru`)"
       - "traefik.http.routers.insights.entrypoints=websecure"
       - "traefik.http.routers.insights.service=insights-service"
       - "traefik.http.routers.insights.tls.certresolver=myresolver"
       - "traefik.http.services.insights-service.loadbalancer.server.port=8081"
 
-      - "traefik.http.routers.web.rule=Host(web4.my-points.ru)"
+      - "traefik.http.routers.web.rule=Host(`web4.my-points.ru`)"
       - "traefik.http.routers.web.entrypoints=websecure"
       - "traefik.http.routers.web.service=web-service"
       - "traefik.http.routers.web.tls.certresolver=myresolver"
